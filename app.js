@@ -192,6 +192,24 @@
         }
     }
 
+      function applyTheme() {
+        if (!CFG || !CFG.theme) return;
+        var th = CFG.theme;
+        var r = document.documentElement.style;
+        if (th.bg) r.setProperty('--bg', th.bg);
+        if (th.card) r.setProperty('--card', th.card);
+        if (th.accent) r.setProperty('--accent', th.accent);
+        if (th.accent2) r.setProperty('--accent2', th.accent2);
+        if (th.accent3) r.setProperty('--accent3', th.accent3);
+        if (th.cyan) r.setProperty('--cyan', th.cyan);
+        if (th.green) r.setProperty('--green', th.green);
+        if (th.red) r.setProperty('--red', th.red);
+        if (th.text1) r.setProperty('--text-1', th.text1);
+        if (th.text2) r.setProperty('--text-2', th.text2);
+        if (th.text3) r.setProperty('--text-3', th.text3);
+        log('Theme applied');
+    }
+   
     function buildUIVisibility() {
         if (!CFG || !CFG.ui) return;
         var ui = CFG.ui;
@@ -716,6 +734,7 @@
             buildLangBar();
             buildPresets();
             buildPreviews();
+            applyTheme();
             buildBranding();
             buildUIVisibility();
 
