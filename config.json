@@ -1,5 +1,18 @@
 {
     "version": "1.0",
+    "theme": {
+    "bg": "#060a14",
+    "card": "rgba(12, 18, 34, 0.82)",
+    "accent": "#6366f1",
+    "accent2": "#818cf8",
+    "accent3": "#a78bfa",
+    "cyan": "#06b6d4",
+    "green": "#10b981",
+    "red": "#ef4444",
+    "text1": "#f1f5f9",
+    "text2": "#94a3b8",
+    "text3": "#64748b"
+},
     "branding": {
         "name": "FontEF Pro",
         "version_label": "v1.0",
