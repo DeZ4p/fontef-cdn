@@ -1,3 +1,7 @@
+<!--
+   FontEF Pro v1.0
+   Author: @DeZ4p | t.me/DeZ4p
+-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -35,42 +39,30 @@
             </div>
             <div>
                 <h1>FontEF <span class="pro">Pro</span></h1>
-                <div class="header-sub">
-                    <span class="badge">v1.0</span>
-                    <span class="badge badge-ksu">KernelSU</span>
-                </div>
+                <div class="header-sub"></div>
             </div>
         </div>
     </div>
 
-    <!-- Language Flags -->
-    <div class="lang-bar" id="langBar">
-        <button class="lang-btn active" data-lang="en"><span class="lang-flag">🇺🇸</span><span class="lang-name">EN</span></button>
-        <button class="lang-btn" data-lang="fa"><span class="lang-flag">🇮🇷</span><span class="lang-name">FA</span></button>
-        <button class="lang-btn" data-lang="ar"><span class="lang-flag">🇸🇦</span><span class="lang-name">AR</span></button>
-        <button class="lang-btn" data-lang="ru"><span class="lang-flag">🇷🇺</span><span class="lang-name">RU</span></button>
-        <button class="lang-btn" data-lang="id"><span class="lang-flag">🇮🇩</span><span class="lang-name">ID</span></button>
-        <button class="lang-btn" data-lang="hi"><span class="lang-flag">🇮🇳</span><span class="lang-name">HI</span></button>
-        <button class="lang-btn" data-lang="tr"><span class="lang-flag">🇹🇷</span><span class="lang-name">TR</span></button>
-        <button class="lang-btn" data-lang="de"><span class="lang-flag">🇩🇪</span><span class="lang-name">DE</span></button>
-    </div>
+    <!-- Language Bar (built by JS from config) -->
+    <div class="lang-bar" id="langBar"></div>
 
     <!-- Root Status -->
     <div class="root-card" id="rootCard">
         <div class="root-indicator">
-            <div class="root-icon-box" id="rootIconBox">
+            <div class="root-icon-box">
                 <svg class="root-icon-svg" viewBox="0 0 24 24" width="28" height="28">
                     <circle cx="12" cy="12" r="10" fill="none" stroke="#64748b" stroke-width="2" class="root-circle"/>
                     <path d="M8 12l3 3 5-5" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="root-check" style="opacity:0"/>
                 </svg>
             </div>
             <div class="root-info">
-                <div class="root-title" id="rootTitle">Checking root access...</div>
+                <div class="root-title" id="rootTitle">Loading...</div>
                 <div class="root-detail" id="rootDetail"></div>
             </div>
             <div class="root-status-dot" id="rootDot"></div>
         </div>
-        <div class="root-meta" id="rootMeta">
+        <div class="root-meta">
             <div class="root-meta-item">
                 <svg viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="2" width="14" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="18" x2="12" y2="18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 <span id="metaDeviceText">—</span>
@@ -86,7 +78,7 @@
         </div>
     </div>
 
-    <!-- Quick Stats -->
+    <!-- Stats -->
     <div class="stats-row">
         <div class="stat-card">
             <svg class="stat-svg" viewBox="0 0 24 24" width="22" height="22"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM12 15a3 3 0 110-6 3 3 0 010 6z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -110,24 +102,14 @@
         </div>
     </div>
 
-    <!-- ROM Preset -->
+    <!-- ROM Preset (built by JS from config) -->
     <div class="card glass">
         <div class="card-head">
             <svg class="card-svg" viewBox="0 0 24 24" width="20" height="20"><rect x="5" y="2" width="14" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="18" x2="12" y2="18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             <span id="lbl_preset">ROM Preset</span>
             <span class="card-badge" id="presetName">Universal</span>
         </div>
-        <div class="preset-scroll">
-            <div class="preset-grid" id="presetGrid">
-                <button class="preset-btn active" data-preset="universal"><div class="preset-ico">🌐</div><span>Universal</span><span class="preset-sub" id="lbl_all_roms">All ROMs</span></button>
-                <button class="preset-btn" data-preset="miui"><div class="preset-ico">🟠</div><span>MIUI / HyperOS</span><span class="preset-sub">Xiaomi, Poco, Redmi</span></button>
-                <button class="preset-btn" data-preset="samsung"><div class="preset-ico">🔵</div><span>One UI</span><span class="preset-sub">Samsung Galaxy</span></button>
-                <button class="preset-btn" data-preset="oneplus"><div class="preset-ico">🔴</div><span>OxygenOS / ColorOS</span><span class="preset-sub">OnePlus, Oppo, Realme</span></button>
-                <button class="preset-btn" data-preset="pixel"><div class="preset-ico">🟢</div><span>Pixel UI</span><span class="preset-sub">Google Pixel</span></button>
-                <button class="preset-btn" data-preset="aosp"><div class="preset-ico">🤖</div><span>AOSP / Custom</span><span class="preset-sub">LineageOS, crDroid, PixelOS</span></button>
-                <button class="preset-btn" data-preset="huawei"><div class="preset-ico">⚫</div><span>EMUI / HarmonyOS</span><span class="preset-sub">Huawei, Honor</span></button>
-            </div>
-        </div>
+        <div class="preset-scroll"><div class="preset-grid" id="presetGrid"></div></div>
     </div>
 
     <!-- Upload -->
@@ -149,55 +131,24 @@
         </div>
         <input type="file" id="fontInput" accept=".ttf,.otf" style="display:none">
         <div class="file-info" id="fileInfo">
-            <div class="file-ico-box">
-                <svg viewBox="0 0 24 24" width="24" height="24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" fill="none" stroke="#10b981" stroke-width="1.5"/><polyline points="14,2 14,8 20,8" fill="none" stroke="#10b981" stroke-width="1.5"/></svg>
-            </div>
-            <div class="file-details">
-                <span class="file-name" id="fileName"></span>
-                <span class="file-size" id="fileSize"></span>
-            </div>
-            <button class="remove-btn" id="removeBtn">
-                <svg viewBox="0 0 24 24" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
+            <div class="file-ico-box"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" fill="none" stroke="#10b981" stroke-width="1.5"/><polyline points="14,2 14,8 20,8" fill="none" stroke="#10b981" stroke-width="1.5"/></svg></div>
+            <div class="file-details"><span class="file-name" id="fileName"></span><span class="file-size" id="fileSize"></span></div>
+            <button class="remove-btn" id="removeBtn"><svg viewBox="0 0 24 24" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
         </div>
     </div>
 
-    <!-- Preview -->
+    <!-- Preview (built by JS from config) -->
     <div class="card glass" id="previewCard">
         <div class="card-head">
             <svg class="card-svg" viewBox="0 0 24 24" width="20" height="20"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             <span id="lbl_preview">Font Preview</span>
         </div>
-        <div class="preview-section" id="previewSection">
-
-            <div class="prev-block"><div class="prev-header"><span class="prev-flag">🇺🇸</span><span class="prev-lang">English</span><div class="prev-size-ctrl"><button class="sz-btn sz-minus" data-target="prev-en"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="sz-val" id="sz-prev-en">16</span><button class="sz-btn sz-plus" data-target="prev-en"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button class="sz-btn sz-reset" data-target="prev-en"><svg viewBox="0 0 24 24" width="12" height="12"><polyline points="1,4 1,10 7,10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></button></div></div><p class="prev-text prev-en">The quick brown fox jumps over the lazy dog</p><p class="prev-text prev-en prev-sm">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</p></div>
-
-            <div class="prev-block"><div class="prev-header"><span class="prev-flag">🇮🇷</span><span class="prev-lang">فارسی</span><div class="prev-size-ctrl"><button class="sz-btn sz-minus" data-target="prev-fa"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="sz-val" id="sz-prev-fa">16</span><button class="sz-btn sz-plus" data-target="prev-fa"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button class="sz-btn sz-reset" data-target="prev-fa"><svg viewBox="0 0 24 24" width="12" height="12"><polyline points="1,4 1,10 7,10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></button></div></div><p class="prev-text prev-fa" dir="rtl">در کوچه‌های قدیمی شهر، صدای پای رهگذران می‌پیچد</p><p class="prev-text prev-fa prev-sm" dir="rtl">آ ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ه ی</p></div>
-
-            <div class="prev-block"><div class="prev-header"><span class="prev-flag">🇸🇦</span><span class="prev-lang">العربية</span><div class="prev-size-ctrl"><button class="sz-btn sz-minus" data-target="prev-ar"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="sz-val" id="sz-prev-ar">16</span><button class="sz-btn sz-plus" data-target="prev-ar"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button class="sz-btn sz-reset" data-target="prev-ar"><svg viewBox="0 0 24 24" width="12" height="12"><polyline points="1,4 1,10 7,10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></button></div></div><p class="prev-text prev-ar" dir="rtl">في شوارع المدينة القديمة يتردد صوت خطى المارة</p></div>
-
-            <div class="prev-block"><div class="prev-header"><span class="prev-flag">🇷🇺</span><span class="prev-lang">Русский</span><div class="prev-size-ctrl"><button class="sz-btn sz-minus" data-target="prev-ru"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="sz-val" id="sz-prev-ru">16</span><button class="sz-btn sz-plus" data-target="prev-ru"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button class="sz-btn sz-reset" data-target="prev-ru"><svg viewBox="0 0 24 24" width="12" height="12"><polyline points="1,4 1,10 7,10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></button></div></div><p class="prev-text prev-ru">Быстрая коричневая лиса прыгает через ленивую собаку</p></div>
-
-            <div class="prev-block"><div class="prev-header"><span class="prev-flag">🇮🇳</span><span class="prev-lang">हिंदी</span><div class="prev-size-ctrl"><button class="sz-btn sz-minus" data-target="prev-hi"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="sz-val" id="sz-prev-hi">16</span><button class="sz-btn sz-plus" data-target="prev-hi"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button class="sz-btn sz-reset" data-target="prev-hi"><svg viewBox="0 0 24 24" width="12" height="12"><polyline points="1,4 1,10 7,10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></button></div></div><p class="prev-text prev-hi">तेज़ भूरी लोमड़ी आलसी कुत्ते के ऊपर कूदती है</p></div>
-
-            <div class="prev-block"><div class="prev-header"><span class="prev-flag">🇮🇩</span><span class="prev-lang">Indonesia</span><div class="prev-size-ctrl"><button class="sz-btn sz-minus" data-target="prev-id"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="sz-val" id="sz-prev-id">16</span><button class="sz-btn sz-plus" data-target="prev-id"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button class="sz-btn sz-reset" data-target="prev-id"><svg viewBox="0 0 24 24" width="12" height="12"><polyline points="1,4 1,10 7,10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></button></div></div><p class="prev-text prev-id">Rubah cokelat cepat melompati anjing yang malas</p></div>
-
-            <div class="prev-block"><div class="prev-header"><span class="prev-flag">🇹🇷</span><span class="prev-lang">Türkçe</span><div class="prev-size-ctrl"><button class="sz-btn sz-minus" data-target="prev-tr"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="sz-val" id="sz-prev-tr">16</span><button class="sz-btn sz-plus" data-target="prev-tr"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button class="sz-btn sz-reset" data-target="prev-tr"><svg viewBox="0 0 24 24" width="12" height="12"><polyline points="1,4 1,10 7,10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></button></div></div><p class="prev-text prev-tr">Pijamalı hasta yağız şoföre çabucak güvendi</p></div>
-
-            <div class="prev-block"><div class="prev-header"><span class="prev-flag">🇩🇪</span><span class="prev-lang">Deutsch</span><div class="prev-size-ctrl"><button class="sz-btn sz-minus" data-target="prev-de"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="sz-val" id="sz-prev-de">16</span><button class="sz-btn sz-plus" data-target="prev-de"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button class="sz-btn sz-reset" data-target="prev-de"><svg viewBox="0 0 24 24" width="12" height="12"><polyline points="1,4 1,10 7,10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></button></div></div><p class="prev-text prev-de">Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich</p></div>
-
-        </div>
+        <div class="preview-section" id="previewSection"></div>
     </div>
 
     <!-- Actions -->
     <div class="actions">
-        <button class="btn-apply" id="applyBtn" disabled>
-            <span class="btn-shine"></span>
-            <span class="btn-content">
-                <svg viewBox="0 0 24 24" width="20" height="20"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="22,4 12,14.01 9,11.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span id="lbl_apply">Apply Font</span>
-            </span>
-        </button>
+        <button class="btn-apply" id="applyBtn" disabled><span class="btn-shine"></span><span class="btn-content"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="22,4 12,14.01 9,11.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="lbl_apply">Apply Font</span></span></button>
         <div class="btn-row">
             <button class="btn-action" id="resetBtn"><svg viewBox="0 0 24 24" width="18" height="18"><polyline points="1,4 1,10 7,10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span id="lbl_reset">Reset</span></button>
             <button class="btn-action" id="backupBtn"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" fill="none" stroke="currentColor" stroke-width="1.5"/><polyline points="17,21 17,13 7,13 7,21" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span id="lbl_backup">Backup</span></button>
@@ -208,10 +159,7 @@
 
     <!-- Progress -->
     <div class="progress-wrap" id="progressWrap">
-        <div class="progress-header">
-            <span class="progress-title" id="progressTitle"></span>
-            <span class="progress-pct" id="progressPct">0%</span>
-        </div>
+        <div class="progress-header"><span class="progress-title" id="progressTitle"></span><span class="progress-pct" id="progressPct">0%</span></div>
         <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
         <div class="progress-steps" id="progressSteps"></div>
     </div>
@@ -229,11 +177,8 @@
         <div class="log-content" id="logContent"></div>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <div class="footer-line">FontEF Pro v1.0</div>
-        <div class="footer-line">Developed by <a href="https://t.me/DeZ4p" target="_blank" class="dev-link">@DeZ4p</a></div>
-    </div>
+    <!-- Footer (built by JS from config) -->
+    <div class="footer"></div>
 
 </div>
 
