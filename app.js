@@ -228,6 +228,22 @@
         }
     }
 
+
+
+
+       /* =========================
+       AUTO THEME (DEVICE BASED)
+       ========================= */
+       function applyDeviceTheme() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            document.body.classList.add('light');
+            log('Theme: Light (device)');
+        } else {
+            document.body.classList.remove('light');
+            log('Theme: Dark (device)');
+        }
+    }
+   
     /* =========================
        TRANSLATE
     ========================= */
@@ -762,6 +778,14 @@
             // Security
             document.addEventListener('contextmenu', function (e) { e.preventDefault(); });
 
+            // Auto detect dark/light mode from device
+            applyDeviceTheme();
+            if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+            applyDeviceTheme();
+            });
+        }
+           
             // Start
             translate();
             log('FontEF Pro v1.0 | @DeZ4p');
