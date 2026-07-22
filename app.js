@@ -807,25 +807,15 @@
             applyDeviceTheme();
             });
         }
-
-                       // Theme toggle button
-            var themeBtn = document.createElement('button');
-            themeBtn.className = 'btn-action';
-            themeBtn.id = 'themeToggleBtn';
-            themeBtn.innerHTML =
-                '<svg viewBox="0 0 24 24" width="18" height="18">' +
-                '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="none" stroke="currentColor" stroke-width="1.5"/>' +
-                '</svg>' +
-                '<span>Theme</span>';
-
-            themeBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                toggleUserTheme();
-            });
-
-            var btnRow = document.querySelector('.btn-row');
-            if (btnRow) btnRow.appendChild(themeBtn);
-
+           
+            // Header theme toggle
+            if ($('themeToggleBtn')) {
+                $('themeToggleBtn').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toggleUserTheme();
+                });
+            }
+                     
             // Auto theme detect
             applyDeviceTheme();
             if (window.matchMedia) {
