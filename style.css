@@ -983,7 +983,7 @@ button {
 
 .btn-row{
     display:grid;
-    grid-template-columns:repeat(5,1fr);
+    grid-template-columns:repeat(4,1fr);
     gap:6px
 }
 
@@ -1280,6 +1280,39 @@ body.light .editor-area { background: rgba(0,0,0,.03); }
 body.light .toast.success { box-shadow: 0 8px 24px rgba(16,185,129,.2); }
 body.light .toast.error { box-shadow: 0 8px 24px rgba(239,68,68,.2); }
 body.light .toast.info { box-shadow: 0 8px 24px rgba(99,102,241,.2); }
+
+/* ===== THEME TOGGLE IN HEADER ===== */
+.theme-toggle {
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: rgba(99, 102, 241, 0.08);
+    color: var(--text-2);
+    cursor: pointer;
+    transition: .25s ease;
+    margin-inline-start: auto;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent2);
+    background: rgba(99, 102, 241, 0.15);
+}
+
+.theme-toggle:active {
+    transform: scale(.9);
+}
+
+body.light .theme-icon-dark { display: none !important; }
+body.light .theme-icon-light { display: block !important; }
+body:not(.light) .theme-icon-dark { display: block !important; }
+body:not(.light) .theme-icon-light { display: none !important; }
 
 /* =========================
    RESPONSIVE
