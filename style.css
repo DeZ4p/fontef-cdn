@@ -981,10 +981,10 @@ button {
     transform: scale(.97);
 }
 
-.btn-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 6px;
+.btn-row{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:6px
 }
 
 .btn-action {
