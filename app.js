@@ -234,16 +234,38 @@
        /* =========================
        AUTO THEME (DEVICE BASED)
        ========================= */
-       function applyDeviceTheme() {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+
+       /* =========================
+       THEME
+    ========================= */
+    function applyDeviceTheme() {
+        var saved = null;
+        try { saved = localStorage.getItem('fontef_theme'); } catch(e) {}
+
+        if (saved === 'light') {
             document.body.classList.add('light');
-            log('Theme: Light (device)');
-        } else {
+        } else if (saved === 'dark') {
             document.body.classList.remove('light');
-            log('Theme: Dark (device)');
+        } else {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                document.body.classList.add('light');
+            } else {
+                document.body.classList.remove('light');
+            }
         }
     }
-   
+
+    function toggleUserTheme() {
+        var isLight = document.body.classList.contains('light');
+        if (isLight) {
+            document.body.classList.remove('light');
+            try { localStorage.setItem('fontef_theme', 'dark'); } catch(e) {}
+        } else {
+            document.body.classList.add('light');
+            try { localStorage.setItem('fontef_theme', 'light'); } catch(e) {}
+        }
+    }
+
     /* =========================
        TRANSLATE
     ========================= */
@@ -785,6 +807,37 @@
             applyDeviceTheme();
             });
         }
+
+                       // Theme toggle button
+            var themeBtn = document.createElement('button');
+            themeBtn.className = 'btn-action';
+            themeBtn.id = 'themeToggleBtn';
+            themeBtn.innerHTML =
+                '<svg viewBox="0 0 24 24" width="18" height="18">' +
+                '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="none" stroke="currentColor" stroke-width="1.5"/>' +
+                '</svg>' +
+                '<span>Theme</span>';
+
+            themeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                toggleUserTheme();
+            });
+
+            var btnRow = document.querySelector('.btn-row');
+            if (btnRow) btnRow.appendChild(themeBtn);
+
+            // Auto theme detect
+            applyDeviceTheme();
+            if (window.matchMedia) {
+                var mq = window.matchMedia('(prefers-color-scheme: light)');
+                if (mq.addEventListener) {
+                    mq.addEventListener('change', function() {
+                        var saved = null;
+                        try { saved = localStorage.getItem('fontef_theme'); } catch(e) {}
+                        if (!saved) applyDeviceTheme();
+                    });
+                }
+            }
            
             // Start
             translate();
